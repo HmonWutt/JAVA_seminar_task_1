@@ -23,6 +23,10 @@ public class Menu {
                     RockPaperScissor game = new RockPaperScissor();
                     game.start();
                     break;
+                case "3":
+                    RockPaperScissor newGame = new RockPaperScissor();
+                    newGame.start();
+                    break;
                 case "m":
                     printMenu();
                     break;
