@@ -1,11 +1,10 @@
 import java.util.Random;
 
 public class Dice {
-    int sides;
-    int lastRoll;
-    Dice(int sides){
+    private final int sides;
+    private int lastRoll;
+    public Dice(int sides){
         this.sides = sides;
-        //System.out.println("Constructor called with argument: " + sides);
     }
     public int roll() {
         Random random = new Random();
