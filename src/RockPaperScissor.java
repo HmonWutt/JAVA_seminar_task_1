@@ -10,7 +10,6 @@ public class RockPaperScissor {
        Scanner scanner = new Scanner(System.in);
        String myChoice = "-";
        while (!myChoice.equals("q") && !myChoice.equals("Q")){
-           printMenu();
            robot.playRandomly(dice);
            myChoice = utilities.getChoice(scanner);
            try {
