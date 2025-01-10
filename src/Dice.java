@@ -11,7 +11,6 @@ public class Dice {
         this.lastRoll = random.nextInt(this.sides) + 1;
         return  this.lastRoll;
     }
-    @Override
     public String toString() {
         String[] diceGraphics = {"⚀", "⚁", "⚂", "⚃", "⚄", "⚅"};
         return diceGraphics[this.lastRoll - 1];
