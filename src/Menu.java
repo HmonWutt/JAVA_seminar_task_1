@@ -19,20 +19,13 @@ public class Menu {
                 case "2":
                     Today.print();
                     break;
-                case "3A":
-                    RockPaperScissor game = new RockPaperScissor();
-                    game.start();
-                    break;
-                case "3":
-                    RockPaperScissor newGame = new RockPaperScissor();
-                    newGame.start();
+                case "3A", "3":
+                    RockPaperScissor.start();
                     break;
                 case "m":
                     printMenu();
                     break;
-                case "q":
-                    break;
-                case "Q":
+                case "q","Q":
                     break;
                 default:
                     System.err.println("Bad menu choice, use 'm' to get the menu.");
