@@ -5,7 +5,7 @@ public class Dice {
     int lastRoll;
     Dice(int sides){
         this.sides = sides;
-        System.out.println("Constructor called with argument: " + sides);
+        //System.out.println("Constructor called with argument: " + sides);
     }
     public int roll() {
         Random random = new Random();
