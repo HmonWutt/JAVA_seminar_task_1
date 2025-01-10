@@ -37,18 +37,43 @@ public class RockPaperScissor {
         String robotStrategy = robot.getStrategy();
         String myStrategy = you.getStrategy();
         if (myStrategy.equals(robotStrategy)) {
-            System.out.printf("Score: %s, 0 - 0 %s%n", you.name, robot.name);
-            System.out.printf("Score: %s, 0 - 0 %s%n", you.name, robot.name);
+            printScore(0,0);
+            printTie();
         } else if ((myStrategy.equals("r") && robotStrategy.equals("s")) ||
                 (myStrategy.equals("p") && robotStrategy.equals("r")) ||
                 (myStrategy.equals("s") && robotStrategy.equals("p"))) {
-            System.out.printf("Score: %s, 1 - 0 %s%n", you.name, robot.name);
+            printScore(1,0);
+            printWin();
         } else {
-            System.out.printf("Score: %s, 0 - 1 %s%n", you.name, robot.name);
+            printScore(0,1);
+            printLoss();
         }
     }
-
-
-
+private static String stringToEmoji(String string){
+    return switch (string) {
+        case "r" -> "✊";
+        case "s" -> "✂";
+        case "p" -> "✋";
+        default -> "";
+    };
+}
+private static void printScore(int yourScore, int robotScore){
+    System.out.printf("Score: You %d - %s %d%n", yourScore,robot.name, robotScore);
+}
+private static void printTie(){
+   String yourEmoji = stringToEmoji(you.strategy);
+   String robotEmoji = stringToEmoji(robot.strategy);
+    System.out.printf("You did: %s and %s did %s. You are equal! No points!%n%n", yourEmoji, robot.name,robotEmoji);
+}
+    private static void printWin(){
+        String yourEmoji = stringToEmoji(you.strategy);
+        String robotEmoji = stringToEmoji(robot.strategy);
+        System.out.printf("You did: %s and %s did %s. You won \uD83C\uDF89!%n%n", yourEmoji, robot.name,robotEmoji);
+    }
+    private static void printLoss(){
+        String yourEmoji = stringToEmoji(you.strategy);
+        String robotEmoji = stringToEmoji(robot.strategy);
+        System.out.printf("You did: %s and %s did %s. You lost \uD83D\uDE14.%n%n", yourEmoji, robot.name,robotEmoji);
+    }
 
 }
