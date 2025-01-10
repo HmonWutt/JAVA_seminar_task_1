@@ -10,7 +10,7 @@ public class Menu {
         String choice;
         do {
             printMenu();
-            choice = utilities.getChoice(this.scanner);
+            choice = getChoice();
             //System.out.println("You entered: " + choice);
             switch (choice) {
                 case "1":
@@ -35,6 +35,10 @@ public class Menu {
             }
         } while (!(choice.equals("q") || choice.equals("Q")));
 
+    }
+    public String getChoice(){
+        System.out.print("Enter your choice: ");
+        return scanner.nextLine();
     }
     private void printMenu() {
         String menuText = """

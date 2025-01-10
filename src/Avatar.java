@@ -3,7 +3,7 @@ import java.nio.file.Path;
 import java.io.IOException;
 public class Avatar {
     public static void print() {
-        Path path = Path.of("avatar.txt");
+        Path path = Path.of("task_01/avatar.txt");
         try {
             String asciiArt = Files.readString(path);
             System.out.println(asciiArt);
